@@ -2,11 +2,13 @@ import { useState } from 'react';
 import './ExpenseForm.css';
 
 
-function ExpenseForm() {
+function ExpenseForm(props) {
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputAmount, setInputAmount] = useState('');
   const [inputDate, setInputDate] = useState('');
+
+  const onSaveExpenseData = props.onSaveExpenseData;
 
   // alternate way to use useState for all 3 inputs
   // const [userInput, setUserInput] = useState({
@@ -36,7 +38,8 @@ function ExpenseForm() {
       date: new Date(inputDate),
     };
 
-    console.log('expenseData', expenseData);
+    onSaveExpenseData(expenseData);
+
     // reset form input fields
     setInputTitle('');
     setInputAmount('');

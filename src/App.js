@@ -4,6 +4,7 @@ import expenses from './expenseData';
 import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
+
   return (
     <>
       <NewExpense />
