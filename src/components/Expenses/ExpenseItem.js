@@ -1,5 +1,5 @@
 import './ExpenseItem.css';
-import ExpenseDate from '../ExpenseDate/ExpenseDate';
+import ExpenseDate from './ExpenseDate';
 
 function ExpenseItem(props) {
   // const expenseDate = new Date(2022, 3, 23);
