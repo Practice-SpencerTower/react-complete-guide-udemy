@@ -1,6 +1,7 @@
 .expenses-filter {
-  color: white;
+  color: rgb(2, 89, 175);
   padding: 0 1rem;
+  background-color:lightblue;
 }
 
 .expenses-filter__control {

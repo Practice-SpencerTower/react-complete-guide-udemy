@@ -1,8 +1,7 @@
 import './ExpenseFilter.css';
-import { useState } from 'react';
+
 
 function ExpenseFilter(props) {
-
 
   const yearSelectHandler = (e) => {
     props.yearFilterHandler(e.target.value);
