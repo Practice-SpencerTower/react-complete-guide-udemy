@@ -3,6 +3,7 @@ import './ExpenseForm.css';
 
 
 function ExpenseForm(props) {
+  console.log('ExpenseForm Props: ', props);
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputAmount, setInputAmount] = useState('');
@@ -78,7 +79,7 @@ function ExpenseForm(props) {
           />
         </div>
         <div className="new-expense__action">
-          <button onClick={props.showExpFormHandler}>Cancel</button>
+          <button onClick={props.hideExpFormHandler}>Cancel</button>
         </div>
         <div className="new-expense__actions">
           <button type="submit" onClick={submitHandler}>Add Expense</button>

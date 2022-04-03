@@ -12,11 +12,17 @@ function NewExpense(props) {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
-    console.log(expenseData);
+    setShowExpenseForm(false);
   }
 
+  // can also do two separate hanlders to show/hide form
   const showExpFormHandler = () => {
-    !showExpenseForm ? setShowExpenseForm(() => true) : setShowExpenseForm(() => false);
+    setShowExpenseForm(true);
+    // !showExpenseForm ? setShowExpenseForm(true) : setShowExpenseForm(false);
+  }
+
+  const hideExpFormHandler = () => {
+    setShowExpenseForm(false)
   }
 
   return (
@@ -24,7 +30,7 @@ function NewExpense(props) {
       {!showExpenseForm ?
         <button className="new" onClick={showExpFormHandler}>Add New Expense</button>
         :
-        <ExpenseForm onSaveExpenseData={saveExpenseHandler} />}
+        <ExpenseForm onSaveExpenseData={saveExpenseHandler} hideExpFormHandler={hideExpFormHandler} />}
     </div>
   )
 }
