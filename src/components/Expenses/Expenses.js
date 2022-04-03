@@ -7,8 +7,8 @@ import { useState } from "react";
 function Expenses(props) {
 
   const [year, setYear] = useState('');
-  const yearFilterHandler = (year) => {
-    setYear(year);
+  const yearFilterHandler = (selectedYear) => {
+    setYear(selectedYear);
     console.log('In Expenses year: ', year);
   }
 
