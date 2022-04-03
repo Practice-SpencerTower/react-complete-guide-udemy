@@ -12,6 +12,13 @@ function Expenses(props) {
     console.log('In Expenses year: ', selectedYear);
   }
 
+  let filteredExpenses;
+  selectedYear === 'All' ?
+    filteredExpenses = props.expenses :
+    filteredExpenses = props.expenses.filter((expense) => {
+      return expense.date.getFullYear().toString() === selectedYear;
+    });
+
 
   return (
     <Card className="expenses">
@@ -19,23 +26,16 @@ function Expenses(props) {
         yearFilterHandler={yearFilterHandler} />
 
       {/* chains filter and map methods: filter based on year, then map filtered items into ExpenseItem */}
-      {selectedYear === 'All' ?
-        props.expenses.map(expense => {
-          return <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date} />
-        }) :
-        props.expenses.filter((expense) => {
-          return expense.date.getFullYear().toString() === selectedYear;
-        }).map(expense => {
+      {filteredExpenses.length === 0 ?
+        (<p>No expenses found.</p>) :
+        (filteredExpenses.map(expense => {
           return <ExpenseItem
             key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date} />
         })
+        )
       }
     </Card>
   )
