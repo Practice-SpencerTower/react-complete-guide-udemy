@@ -47,7 +47,7 @@ function ExpenseForm(props) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -77,8 +77,11 @@ function ExpenseForm(props) {
             onChange={dateChangeHandler}
           />
         </div>
+        <div className="new-expense__action">
+          <button onClick={props.showExpFormHandler}>Cancel</button>
+        </div>
         <div className="new-expense__actions">
-          <button type="submit">Add Expense</button>
+          <button type="submit" onClick={submitHandler}>Add Expense</button>
         </div>
       </div>
     </form>

@@ -6,7 +6,8 @@ import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
 
-  const [expenses, setExpenses] = useState(expenseData)
+  const [expenses, setExpenses] = useState(expenseData);
+  const [showExpenseForm, setShowExpenseForm] = useState(false);
 
   const addExpenseHandler = (expense) => {
     // add new expense to dummy data
@@ -16,9 +17,16 @@ function App() {
     console.log(expenses);
   }
 
+  const showExpFormHandler = () => {
+    !showExpenseForm ? setShowExpenseForm(() => true) : setShowExpenseForm(() => false);
+  }
+
   return (
     <>
-      <NewExpense onAddExpense={addExpenseHandler} />
+      {!showExpenseForm ?
+        <button onClick={showExpFormHandler}>Add New Expense</button>
+        :
+        <NewExpense onAddExpense={addExpenseHandler} newExpenseHandler={showExpFormHandler} />}
       <Expenses expenses={expenses} />
     </>
   );
