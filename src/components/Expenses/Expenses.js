@@ -14,21 +14,18 @@ function Expenses(props) {
 
 
   return (
-    <>
+    <Card className="expenses">
       <ExpenseFilter
-        yearFilterHandler={yearFilterHandler}
-      />
-      <Card className="expenses">
-        {
-          props.expenses.map(expense => {
-            return <ExpenseItem
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date} />
-          })
-        }
-      </Card>
-    </>
+        yearFilterHandler={yearFilterHandler} />
+      {
+        props.expenses.map(expense => {
+          return <ExpenseItem
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date} />
+        })
+      }
+    </Card>
   )
 }
 
