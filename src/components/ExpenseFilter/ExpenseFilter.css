@@ -1,13 +1,11 @@
 .expenses-filter {
-  color: rgb(2, 89, 175);
+  color: white;
   padding: 0 1rem;
-  background-color:lightblue;
 }
 
 .expenses-filter__control {
   display: flex;
-  width: 50rem;
-  max-width: 95%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   margin: 1rem 0;
