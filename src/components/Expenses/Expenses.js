@@ -2,7 +2,7 @@ import './Expenses.css';
 import Card from "../UI/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import { useState } from "react";
-import ExpenseList from "./ExpenseList";
+import ExpenseList from "./ExpenseList/ExpenseList";
 
 function Expenses(props) {
 
