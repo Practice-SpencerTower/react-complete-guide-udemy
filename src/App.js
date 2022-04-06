@@ -18,19 +18,20 @@ function App() {
 
   const deleteExpenseHandler = (id) => {
     setExpenses(prevExpenses => {
-      let updatedExpenses = prevExpenses.forEach(expense => {
-        if (!expense.id !== id) {
-          return expense;
-        }
-      })
+      console.log('prevExpenses', prevExpenses)
+      let updatedExpenses = prevExpenses.filter(expense => expense.id !== id);
+      console.log('updatedExpenses', updatedExpenses);
       return updatedExpenses;
     })
   }
 
   return (
     <>
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <NewExpense
+        onAddExpense={addExpenseHandler} />
+      <Expenses
+        expenses={expenses}
+        onDeleteExpense={deleteExpenseHandler} />
     </>
   );
 }
