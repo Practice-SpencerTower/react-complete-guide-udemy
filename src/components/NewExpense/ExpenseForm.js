@@ -79,7 +79,7 @@ function ExpenseForm(props) {
             onChange={dateChangeHandler}
           />
         </div>
-        <div className="new-expense__action">
+        <div className="new-expense__actions">
           <button onClick={props.hideExpFormHandler}>Cancel</button>
         </div>
         <div className="new-expense__actions">
