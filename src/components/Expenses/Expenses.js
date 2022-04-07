@@ -23,9 +23,12 @@ function Expenses(props) {
 
   return (
     <Card className="expenses">
-      <ExpenseFilter yearFilterHandler={yearFilterHandler} />
-      <ExpensesChart expenses={filteredExpenses} />
-      <ExpenseList filteredExpenses={filteredExpenses} />
+      <ExpenseFilter
+        yearFilterHandler={yearFilterHandler} />
+      <ExpensesChart
+        expenses={filteredExpenses} />
+      <ExpenseList
+        filteredExpenses={filteredExpenses} onDeleteExpense={props.onDeleteExpense} />
     </Card>
   )
 }

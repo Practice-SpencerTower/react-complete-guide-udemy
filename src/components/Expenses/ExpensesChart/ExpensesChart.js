@@ -20,6 +20,7 @@ function ExpensesChart(props) {
 
   console.log(chartDataPoints[3].value);
 
+
   for (const expense of props.expenses) {
     const expenseMonth = expense.date.getMonth(); // starts at 0
     console.log(chartDataPoints[expenseMonth].value)
